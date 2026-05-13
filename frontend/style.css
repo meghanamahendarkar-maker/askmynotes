@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.5s ease;
+    overflow: hidden; /* Keep spheres contained */
+    position: relative;
+}
+
+/* --- Floating Spheres (Bubbles) --- */
+.sphere {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(5px);
+    z-index: 1;
+    transition: background 0.5s ease;
+}
+
+/* Light Mode Sphere Styling */
+.signup-theme .sphere {
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.4) 0%, rgba(196, 181, 253, 0) 100%);
+    box-shadow: 0 4px 15px rgba(167, 139, 250, 0.2);
+}
+
+/* Dark Mode Sphere Styling */
+.dark-theme .sphere {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.7) 0%, rgba(139, 92, 246, 0) 100%);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+/* Position and size definitions (mimicking the image) */
+.sphere-1 { width: 100px; height: 100px; top: 10%; right: 15%; }
+.sphere-2 { width: 60px; height: 60px; top: 30%; left: 10%; }
+.sphere-3 { width: 150px; height: 150px; top: -20px; left: 15%; }
+.sphere-4 { width: 120px; height: 120px; bottom: 10%; right: 5%; }
+.sphere-5 { width: 40px; height: 40px; bottom: 25%; left: 20%; }
+.sphere-6 { width: 80px; height: 80px; top: 50%; right: -20px; }
+
+
+/* --- Rest of CSS (from previous turn) --- */
+
+.signup-theme { background: radial-gradient(circle at top right, #c2b7ff, #e3e9ff); }
+.dark-theme { background: radial-gradient(circle at bottom left, #24243e, #0f0c29, #302b63); color: white; }
+
+.container { width: 100%; max-width: 450px; padding: 20px; z-index: 2; position: relative; }
+.hidden { display: none; }
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    padding: 40px 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .glass-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); }
+
+h1 { font-size: 2rem; margin-bottom: 10px; color: #1a1a2e; }
+.dark-theme h1 { color: #fff; background: linear-gradient(to right, #fff, #b794f4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.subtitle { font-size: 0.9rem; color: #555; margin-bottom: 20px; }
+.dark-theme .subtitle { color: #ccc; }
+
+.input-group { text-align: left; margin-bottom: 15px; }
+label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 0.85rem; }
+input, textarea { width: 100%; padding: 12px 15px; border-radius: 12px; border: 1px solid #ddd; background: rgba(255, 255, 255, 0.8); font-family: inherit; }
+.dark-theme input, .dark-theme textarea { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.2); color: white; }
+
+.btn-primary, .btn-submit { width: 100%; padding: 12px; border: none; border-radius: 12px; background: #1a1a2e; color: white; font-weight: 700; cursor: pointer; margin-top: 10px; }
+.btn-submit { background: #3b82f6; }
+
+.btn-social {
+    width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 12px; background: white;
+    cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px;
+}
+.btn-social img { height: 18px; }
+
+.bottom-nav { position: fixed; bottom: 40px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); display: flex; gap: 20px; padding: 10px 20px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.2); z-index: 10; }
+.nav-item { font-size: 0.75rem; text-align: center; opacity: 0.7; cursor: pointer; color: white; }
+.nav-item.active { opacity: 1; color: #a78bfa; }
+
+.bootcamp-footer { position: fixed; bottom: 10px; font-size: 0.7rem; opacity: 0.6; z-index: 10; color: white;}
+.signup-theme .bootcamp-footer {color: #1a1a2e;}

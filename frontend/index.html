@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AskMyNotes - AI PDF Chat</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="signup-theme" id="body-bg">
+
+    <!-- FLOATING SPHERES BACKGROUND -->
+    <div class="sphere sphere-1"></div>
+    <div class="sphere sphere-2"></div>
+    <div class="sphere sphere-3"></div>
+    <div class="sphere sphere-4"></div>
+    <div class="sphere sphere-5"></div>
+    <div class="sphere sphere-6"></div>
+
+    <!-- SIGN UP PAGE -->
+    <div class="container" id="signup-page">
+        <div class="glass-card signup-card">
+            <p style="text-align: center; font-weight: 700; font-size: 1.8rem; margin-top: 15px; color: #6366f1; letter-spacing: 1px;">welcome :) </p>
+            <h1>Join AskMyNotes</h1> 
+            <p class="subtitle">Create your account to start chatting with your PDF notes.</p>
+            <p class="journey-text">Your journey to intelligent, note-based AI chat begins here.</p>
+            
+            <form id="registration-form">
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label>Full name</label>
+                    <input type="text" placeholder="Full name" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn-primary">Sign Up</button>
+            </form>
+
+            <p class="login-link">Already have an account? <a href="#">Log in</a></p>
+            
+            <div class="social-login">
+                <button class="btn-social"><img src="google.jpeg" alt="Google"> Sign up with Google</button>
+                <button class="btn-social"><img src="microsoft.webp" alt="Microsoft"> Sign up with Microsoft</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ASKMYNOTES MAIN PAGE -->
+    <div class="container hidden" id="main-page">
+        <div class="glass-card main-card">
+          <p style="text-align: center; font-weight: 700; font-size: 2.0rem; margin-top: 15px; color: #6366f1; letter-spacing: 1px;">welcome Buddy! :) </p>
+
+            <h1 class="logo-text">AskMyNotes</h1>
+            <p class="subtitle">Chat with your PDF notes using AI-powered retrieval.</p>
+
+            <div class="section upload-section">
+                <label>Upload your notes (PDF)</label>
+                <div class="file-input-wrapper">
+                    <input type="file" id="file-upload" hidden>
+                    <button class="btn-file" onclick="document.getElementById('file-upload').click()">Choose file</button>
+                    <span id="file-name">No file chosen</span>
+                </div>
+                <p class="status-text">No file uploaded yet.</p>
+            </div>
+
+            <div class="section">
+                <label>Your question</label>
+                <textarea placeholder="Ask my notes about..."></textarea>
+                <div class="align-right">
+                    <button class="btn-submit">Submit</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <label>Answer</label>
+                <div class="answer-box">
+                    <p class="placeholder-text">Your answer will appear here...</p>
+                </div>
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <div class="nav-item active"><span>🏠</span> Home</div>
+            <div class="nav-item"><span>📚</span> Notes Library</div>
+            <div class="nav-item"><span>💬</span> AI Chat</div>
+            <div class="nav-item"><span>👤</span> Profile</div>
+            <div class="nav-item"><span>⚙️</span> Settings</div>
+        </nav>
+    </div>
+
+    <footer class="bootcamp-footer">Built as part of the AI Engineering Bootcamp</footer>
+
+    <script>
+        const form = document.getElementById('registration-form');
+        form.onsubmit = (e) => {
+            e.preventDefault();
+            document.getElementById('signup-page').classList.add('hidden');
+            document.getElementById('main-page').classList.remove('hidden');
+            document.getElementById('body-bg').className = 'dark-theme';
+        };
+    </script>
+</body>
+</html>
