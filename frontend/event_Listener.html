@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Listener Example</title>
+</head>
+<body>
+
+<button id="btn">Click Me</button>
+
+<script>
+    const button = document.getElementById("btn");
+
+    button.addEventListener("click", function() {
+        console.log("First");
+    });
+
+    button.addEventListener("click", function() {
+        console.log("Second");
+    });
+</script>
+
+</body>
+</html>

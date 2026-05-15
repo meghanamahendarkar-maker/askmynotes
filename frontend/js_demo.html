@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Example</title>
+</head>
+
+<body>
+
+    <h1 id="demo">This is some text.</h1>
+
+    <button onclick="changeText()">Change Text</button>
+
+    <input type="button" value="Say Hello" id="button" />
+
+    <button id="btn">Click Me</button>
+
+    <script>
+        // Change text function
+        function changeText() {
+            let element = document.getElementById("demo");
+            element.textContent = "Text changed by JavaScript!";
+        }
+
+        // Mouse coordinates button
+        const button1 = document.querySelector('#button');
+        button1.addEventListener("click", function(event) {
+            const x = event.clientX;
+            const y = event.clientY;
+            alert(`Button clicked at X: ${x}, Y: ${y}`);
+        });
+
+        // Multiple event listeners example
+        const button2 = document.getElementById("btn");
+
+        button2.addEventListener("click", function() {
+            console.log("First");
+        });
+
+        button2.addEventListener("click", function() {
+            console.log("Second");
+        });
+    </script>
+
+</body>
+</html>
